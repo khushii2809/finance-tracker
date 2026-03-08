@@ -1,18 +1,45 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Login from "./pages/login";
-import Dashboard from "./pages/dashboard";
-import Transactions from "./pages/transactions";
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+
+import Layout from "./components/Layout"
+
+import Dashboard from "./pages/dashboard"
+import Login from "./pages/login"
+import Transactions from "./pages/transactions"
 
 function App() {
+
   return (
+
     <BrowserRouter>
+
       <Routes>
+
         <Route path="/" element={<Login />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/transactions" element={<Transactions />} />
+
+        <Route
+          path="/dashboard"
+          element={
+            <Layout>
+              <Dashboard />
+            </Layout>
+          }
+        />
+
+        <Route
+          path="/transactions"
+          element={
+            <Layout>
+              <Transactions />
+            </Layout>
+          }
+        />
+
       </Routes>
+
     </BrowserRouter>
-  );
+
+  )
+
 }
 
-export default App;
+export default App

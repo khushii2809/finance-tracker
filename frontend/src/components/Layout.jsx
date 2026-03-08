@@ -1,44 +1,26 @@
-import { AppBar, Toolbar, Typography, Button, Box } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import Sidebar from "./Sidebar"
+import Navbar from "./Navbar"
 
-export default function Layout({ children }) {
-
-  const navigate = useNavigate();
-
-  const logout = () => {
-    localStorage.removeItem("token");
-    navigate("/");
-  };
+function Layout({ children }) {
 
   return (
-    <Box>
+    <div style={{ display: "flex" }}>
 
-      <AppBar position="static">
-        <Toolbar>
+      <Sidebar />
 
-          <Typography variant="h6" sx={{ flexGrow: 1 }}>
-            Finance Tracker
-          </Typography>
+      <div style={{ flex: 1 }}>
 
-          <Button color="inherit" onClick={() => navigate("/dashboard")}>
-            Dashboard
-          </Button>
+        <Navbar />
 
-          <Button color="inherit" onClick={() => navigate("/transactions")}>
-            Transactions
-          </Button>
+        <div style={{ padding: "30px" }}>
+          {children}
+        </div>
 
-          <Button color="inherit" onClick={logout}>
-            Logout
-          </Button>
+      </div>
 
-        </Toolbar>
-      </AppBar>
+    </div>
+  )
 
-      <Box sx={{ padding: 4 }}>
-        {children}
-      </Box>
-
-    </Box>
-  );
 }
+
+export default Layout
