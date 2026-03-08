@@ -58,3 +58,54 @@ body{
 .card:hover{
   transform:translateY(-5px);
 }
+
+.table-card{
+  background:white;
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+
+.transaction-table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+.transaction-table th,
+.transaction-table td{
+  padding:10px;
+  text-align:left;
+  border-bottom:1px solid #eee;
+}
+
+.budget-card{
+  background:white;
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+
+.progress-bar{
+  height:10px;
+  background:#e5e7eb;
+  border-radius:5px;
+  overflow:hidden;
+  margin:10px 0;
+}
+
+.progress-fill{
+  height:100%;
+  background:#3b82f6;
+}
+.dark{
+  background:#0f172a;
+  color:white;
+}
+
+.dark .card,
+.dark .table-card,
+.dark .budget-card,
+.dark .navbar{
+  background:#1e293b;
+  color:white;
+}

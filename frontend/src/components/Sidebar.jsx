@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom"
 
-function Sidebar() {
+function Sidebar(){
 
-  return (
+  return(
 
     <div className="sidebar">
 
@@ -12,7 +12,6 @@ function Sidebar() {
 
         <Link to="/dashboard">Dashboard</Link>
         <Link to="/transactions">Transactions</Link>
-        <Link to="/analytics">Analytics</Link>
 
       </nav>
 
